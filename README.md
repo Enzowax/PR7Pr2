@@ -10,7 +10,7 @@
 | Группа | 3ИСИП-423 |
 | Специальность | 09.02.07 «Информационные системы и программирование» |
 | Курс | 3 |
-| Дисциплина | УП.01 / МДК (Поддержка и тестирование программных модулей) |
+| Дисциплина | Поддержка и тестирование программных модулей |
 | Среда разработки | Microsoft Visual Studio 2022 |
 | Платформа | .NET 9 (net9.0-windows), Windows Forms |
 | Язык | C# |
@@ -97,7 +97,7 @@ flowchart LR
 ## Структура решения
 
 ```
-UP_01_BeelineCipher/
+PR7/
 ├── BeelineCipher.sln
 ├── BeelineCipher/                     # WinForms-приложение
 │   ├── BeelineCipherCore.cs           # Модули шифрования / дешифрования / визуализации
@@ -107,6 +107,7 @@ UP_01_BeelineCipher/
 │   └── BeelineCipher.csproj
 ├── BeelineCipher.Tests/               # Автоматизированные тесты MSTest
 │   ├── BeelineCipherTests.cs
+│   ├── PerformanceBenchmark.cs        # Бенчмарки производительности
 │   └── BeelineCipher.Tests.csproj
 └── README.md
 ```
