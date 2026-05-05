@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="cf33172b-0dba-4942-bd05-9738d58142ef" name="strea@DESKTOP-DI2A3F9 2026-05-05 13:41:04" runUser="DESKTOP-DI2A3F9\strea" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-05-05T13:41:04.5578808+03:00" queuing="2026-05-05T13:41:04.5578812+03:00" start="2026-05-05T13:41:04.0681238+03:00" finish="2026-05-05T13:41:04.5783941+03:00" />
+  <TestSettings name="default" id="7cf8e5c5-a7f0-46ad-b947-b496be4bd467">
+    <Deployment runDeploymentRoot="strea_DESKTOP-DI2A3F9_2026-05-05_13_41_04" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="bbb6adc4-caf8-4639-b409-18a6f725f9c5" testId="fbaa99dc-65e9-8168-de0b-197254d20346" testName="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (-1)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0000491" startTime="2026-05-05T13:41:04.5428173+03:00" endTime="2026-05-05T13:41:04.5429478+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbb6adc4-caf8-4639-b409-18a6f725f9c5" />
+    <UnitTestResult executionId="fab13f62-429f-4f19-a6f5-37c2d17ccc27" testId="9b4e722e-4bf8-5743-1240-0376ad155fa5" testName="EncryptDecrypt_RussianText_RestoresOriginal" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0624589" startTime="2026-05-05T13:41:04.4581052+03:00" endTime="2026-05-05T13:41:04.5320285+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fab13f62-429f-4f19-a6f5-37c2d17ccc27" />
+    <UnitTestResult executionId="48906524-3403-45db-bdee-9ace40a7670d" testId="b6785c09-4f8e-1cd1-3e23-cb481a51a39c" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (3)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0593862" startTime="2026-05-05T13:41:04.4581174+03:00" endTime="2026-05-05T13:41:04.5320588+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="48906524-3403-45db-bdee-9ace40a7670d" />
+    <UnitTestResult executionId="6a6bdadd-4592-4615-9ce7-03daca73f429" testId="d92a32fc-6c64-b9b1-8d28-c63ff4976719" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (10)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0503517" startTime="2026-05-05T13:41:04.4794335+03:00" endTime="2026-05-05T13:41:04.5320547+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a6bdadd-4592-4615-9ce7-03daca73f429" />
+    <UnitTestResult executionId="fb2debb3-ebd1-4133-b65e-d7a26c63d949" testId="ac8f7f32-a1aa-3b0b-1a93-c8d01c7e9312" testName="Decrypt_EmptyString_ReturnsEmptyString" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0000697" startTime="2026-05-05T13:41:04.5420881+03:00" endTime="2026-05-05T13:41:04.5422189+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb2debb3-ebd1-4133-b65e-d7a26c63d949" />
+    <UnitTestResult executionId="47b56780-b922-453a-8ac7-a319aca3d39e" testId="ddda8c83-4a3a-d6bf-4b13-8b998fd64b1e" testName="Encrypt_RowsEqualToTextLength_ReturnsTextUnchanged" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0624586" startTime="2026-05-05T13:41:04.4580952+03:00" endTime="2026-05-05T13:41:04.5320599+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47b56780-b922-453a-8ac7-a319aca3d39e" />
+    <UnitTestResult executionId="af01839b-fdf7-4649-b7dd-6818297a7e32" testId="adf1aca4-0610-3dd0-f80f-85c9cd7833ac" testName="Encrypt_ProducesDifferentTextThanOriginal" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0000655" startTime="2026-05-05T13:41:04.5421003+03:00" endTime="2026-05-05T13:41:04.5422211+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="af01839b-fdf7-4649-b7dd-6818297a7e32" />
+    <UnitTestResult executionId="bfee1398-a438-4451-9678-07dbafdc40c4" testId="39f9b953-9c94-c9f5-68f1-59ae1819f41e" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (50)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0503536" startTime="2026-05-05T13:41:04.4794447+03:00" endTime="2026-05-05T13:41:04.5320285+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bfee1398-a438-4451-9678-07dbafdc40c4" />
+    <UnitTestResult executionId="7a400727-e288-458e-8ba2-0b9f50b2c10a" testId="cb14f83c-f0ee-df04-2198-15ccf38c88bb" testName="Encrypt_ClassicHelloWorldWithThreeRows_ReturnsExpectedCipher" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0503941" startTime="2026-05-05T13:41:04.4794639+03:00" endTime="2026-05-05T13:41:04.5320520+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a400727-e288-458e-8ba2-0b9f50b2c10a" />
+    <UnitTestResult executionId="895d5d28-84e9-4af7-a510-76f1d08bd39a" testId="1f59e57e-1412-56d3-f3c4-fd3d488bcc47" testName="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (1)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001313" startTime="2026-05-05T13:41:04.5409086+03:00" endTime="2026-05-05T13:41:04.5411214+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="895d5d28-84e9-4af7-a510-76f1d08bd39a" />
+    <UnitTestResult executionId="20f0cc58-ca42-4f2a-8be5-4494854e345d" testId="7c40a2a8-d081-9fa5-dbcb-edd7beaf3c72" testName="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (1000)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001502" startTime="2026-05-05T13:41:04.5408800+03:00" endTime="2026-05-05T13:41:04.5411352+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="20f0cc58-ca42-4f2a-8be5-4494854e345d" />
+    <UnitTestResult executionId="2d137534-97ea-4dc8-9abd-ff24372480cd" testId="5ea9b47a-837b-f78c-42d5-6191631441a3" testName="EncryptDecrypt_LongText_RestoresOriginal" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001233" startTime="2026-05-05T13:41:04.5428653+03:00" endTime="2026-05-05T13:41:04.5430476+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d137534-97ea-4dc8-9abd-ff24372480cd" />
+    <UnitTestResult executionId="6acfc1a8-1312-4ca5-9462-82fab8125099" testId="04e2746f-a0b3-1ac7-9bc1-010dc968c379" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (2)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0593851" startTime="2026-05-05T13:41:04.4580993+03:00" endTime="2026-05-05T13:41:04.5320285+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6acfc1a8-1312-4ca5-9462-82fab8125099" />
+    <UnitTestResult executionId="960a0a22-3f4f-4a05-9b41-a01c9f9d6e0c" testId="1bbb495c-8a7b-6961-1129-e9a66db94ca9" testName="Encrypt_PreservesLength" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0003251" startTime="2026-05-05T13:41:04.5420875+03:00" endTime="2026-05-05T13:41:04.5424767+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="960a0a22-3f4f-4a05-9b41-a01c9f9d6e0c" />
+    <UnitTestResult executionId="c7cd18f3-e861-42a2-b513-76a57bc55601" testId="c6716d34-77bf-3e87-23f9-5eb91fae556e" testName="Visualize_ThreeRowsHelloWorld_ReturnsExpectedZigzagGrid" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0005310" startTime="2026-05-05T13:41:04.5421114+03:00" endTime="2026-05-05T13:41:04.5426993+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7cd18f3-e861-42a2-b513-76a57bc55601" />
+    <UnitTestResult executionId="1844dee6-80ad-42a7-97fa-58406f23ce0e" testId="ad916cb7-e943-f3c7-429e-ec52615b53f8" testName="Encrypt_RowsGreaterThanTextLength_ReturnsTextUnchanged" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0503940" startTime="2026-05-05T13:41:04.4794846+03:00" endTime="2026-05-05T13:41:04.5320487+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1844dee6-80ad-42a7-97fa-58406f23ce0e" />
+    <UnitTestResult executionId="0ec74d8a-bec5-4be7-a5c2-8914417afba9" testId="7647eee5-7f17-68a4-86e7-2f8e8ca5d8d9" testName="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (0)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001414" startTime="2026-05-05T13:41:04.5408238+03:00" endTime="2026-05-05T13:41:04.5411192+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ec74d8a-bec5-4be7-a5c2-8914417afba9" />
+    <UnitTestResult executionId="ef600690-d144-4049-9246-1464d72d7714" testId="0db1c390-70a3-73fa-4bdc-9327794ccd10" testName="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (101)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001434" startTime="2026-05-05T13:41:04.5408886+03:00" endTime="2026-05-05T13:41:04.5411237+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef600690-d144-4049-9246-1464d72d7714" />
+    <UnitTestResult executionId="f3659254-cedf-4962-953e-cf194c5fdabb" testId="569f7a1d-52ff-7348-d7be-e552b21d2f53" testName="Visualize_ContainsAllOriginalCharacters" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0003117" startTime="2026-05-05T13:41:04.5428469+03:00" endTime="2026-05-05T13:41:04.5432111+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3659254-cedf-4962-953e-cf194c5fdabb" />
+    <UnitTestResult executionId="44917084-ec96-4dfb-b68e-4d4443f54dc2" testId="1d14601e-6d37-bf5e-ae08-7d4421cea0b2" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (5)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0593873" startTime="2026-05-05T13:41:04.4581300+03:00" endTime="2026-05-05T13:41:04.5320472+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="44917084-ec96-4dfb-b68e-4d4443f54dc2" />
+    <UnitTestResult executionId="008b7ee0-6e10-4e5e-a616-3b53a3540ff8" testId="bc0620b6-1846-8b66-0baf-31e5d5768983" testName="Encrypt_TwoRows_ProducesEvenOddSplit" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0503930" startTime="2026-05-05T13:41:04.4794549+03:00" endTime="2026-05-05T13:41:04.5320294+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="008b7ee0-6e10-4e5e-a616-3b53a3540ff8" />
+    <UnitTestResult executionId="ebfb603c-4b66-4a8a-80e6-333ae1f24d1d" testId="8b527d74-31ae-d128-7077-bc7b2e77caf6" testName="EncryptDecrypt_TextWithSpacesAndPunctuation_RestoresOriginal" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0624561" startTime="2026-05-05T13:41:04.4581399+03:00" endTime="2026-05-05T13:41:04.5320285+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ebfb603c-4b66-4a8a-80e6-333ae1f24d1d" />
+    <UnitTestResult executionId="005ccbfb-a621-44ee-980d-7982cb0eb7fc" testId="93e91684-999c-05e4-0e39-a6a4696405d9" testName="Decrypt_NullText_ThrowsArgumentNullException" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0005657" startTime="2026-05-05T13:41:04.5350538+03:00" endTime="2026-05-05T13:41:04.5357372+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="005ccbfb-a621-44ee-980d-7982cb0eb7fc" />
+    <UnitTestResult executionId="e6bc3fcf-acf1-4a99-b449-98e7d3a1b69f" testId="4d778658-e9ba-8a62-4128-041b1d407708" testName="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (0)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001479" startTime="2026-05-05T13:41:04.5408922+03:00" endTime="2026-05-05T13:41:04.5411371+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e6bc3fcf-acf1-4a99-b449-98e7d3a1b69f" />
+    <UnitTestResult executionId="20936754-41ef-4a53-8b62-8734f1fbee6b" testId="836d6df2-f490-5daa-2a98-b957a0eb1c02" testName="Decrypt_AfterEncryption_RestoresOriginalWithThreeRows" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0624597" startTime="2026-05-05T13:41:04.4581343+03:00" endTime="2026-05-05T13:41:04.5320400+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="20936754-41ef-4a53-8b62-8734f1fbee6b" />
+    <UnitTestResult executionId="1db693f0-722a-4c66-bca4-8612573c6a43" testId="0304cb93-b952-0c34-0bee-f6a3ea9856cd" testName="Visualize_EmptyString_ReturnsEmptyString" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0000540" startTime="2026-05-05T13:41:04.5428216+03:00" endTime="2026-05-05T13:41:04.5429210+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1db693f0-722a-4c66-bca4-8612573c6a43" />
+    <UnitTestResult executionId="2d13601f-745f-4cc6-9b07-87af68c0278a" testId="8dd20be4-90a9-eaca-7841-18e606ebace9" testName="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (-3)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0000393" startTime="2026-05-05T13:41:04.5421094+03:00" endTime="2026-05-05T13:41:04.5422236+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d13601f-745f-4cc6-9b07-87af68c0278a" />
+    <UnitTestResult executionId="8ad5f62e-379a-4116-a203-3a3215471015" testId="7fedf13c-e9e7-c7e7-adde-ca173b102830" testName="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (1)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0005387" startTime="2026-05-05T13:41:04.5350626+03:00" endTime="2026-05-05T13:41:04.5357414+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ad5f62e-379a-4116-a203-3a3215471015" />
+    <UnitTestResult executionId="cf2bddff-014f-4491-96a3-9bf72a61ff7c" testId="01e94b31-84c0-bd94-7a91-84e5397b16eb" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (7)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0593850" startTime="2026-05-05T13:41:04.4581218+03:00" endTime="2026-05-05T13:41:04.5320317+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf2bddff-014f-4491-96a3-9bf72a61ff7c" />
+    <UnitTestResult executionId="07fd6d07-2915-4396-b6c0-6c47ea8d6e76" testId="6af72e57-5229-45bd-608d-c0d71c74a626" testName="EncryptDecrypt_DifferentRowCounts_AreReversible (4)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0593851" startTime="2026-05-05T13:41:04.4581116+03:00" endTime="2026-05-05T13:41:04.5320359+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="07fd6d07-2915-4396-b6c0-6c47ea8d6e76" />
+    <UnitTestResult executionId="e8283d75-4a35-4b38-8610-8a7280df5bba" testId="91937a87-ce32-922e-e9c5-1f4305df87de" testName="Encrypt_NullText_ThrowsArgumentNullException" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0005629" startTime="2026-05-05T13:41:04.5350426+03:00" endTime="2026-05-05T13:41:04.5357403+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8283d75-4a35-4b38-8610-8a7280df5bba" />
+    <UnitTestResult executionId="c2779f02-5ac7-4a26-bb1b-e8bdf4d43769" testId="55602890-a1fd-fa0d-d047-a278b4dfe875" testName="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (101)" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0001458" startTime="2026-05-05T13:41:04.5420700+03:00" endTime="2026-05-05T13:41:04.5422817+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c2779f02-5ac7-4a26-bb1b-e8bdf4d43769" />
+    <UnitTestResult executionId="5cf1884d-cb31-47a0-a860-56a5bbd6f73e" testId="21083c3a-0fa3-65c9-7359-2fae955238f9" testName="Encrypt_SameTextWithDifferentRows_ProducesDifferentResults" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0000764" startTime="2026-05-05T13:41:04.5434594+03:00" endTime="2026-05-05T13:41:04.5440898+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5cf1884d-cb31-47a0-a860-56a5bbd6f73e" />
+    <UnitTestResult executionId="c0c73af8-8023-4a7d-9c59-b10d0e54c09f" testId="233bec12-3ba7-0c1d-42b6-6858e020b9ba" testName="Encrypt_EmptyString_ReturnsEmptyString" computerName="DESKTOP-DI2A3F9" duration="00:00:00.0503941" startTime="2026-05-05T13:41:04.4794747+03:00" endTime="2026-05-05T13:41:04.5320284+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0c73af8-8023-4a7d-9c59-b10d0e54c09f" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (7)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="01e94b31-84c0-bd94-7a91-84e5397b16eb">
+      <Execution id="cf2bddff-014f-4491-96a3-9bf72a61ff7c" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="Decrypt_AfterEncryption_RestoresOriginalWithThreeRows" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="836d6df2-f490-5daa-2a98-b957a0eb1c02">
+      <Execution id="20936754-41ef-4a53-8b62-8734f1fbee6b" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_AfterEncryption_RestoresOriginalWithThreeRows" />
+    </UnitTest>
+    <UnitTest name="Encrypt_PreservesLength" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="1bbb495c-8a7b-6961-1129-e9a66db94ca9">
+      <Execution id="960a0a22-3f4f-4a05-9b41-a01c9f9d6e0c" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_PreservesLength" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_TextWithSpacesAndPunctuation_RestoresOriginal" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="8b527d74-31ae-d128-7077-bc7b2e77caf6">
+      <Execution id="ebfb603c-4b66-4a8a-80e6-333ae1f24d1d" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_TextWithSpacesAndPunctuation_RestoresOriginal" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (1000)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="7c40a2a8-d081-9fa5-dbcb-edd7beaf3c72">
+      <Execution id="20f0cc58-ca42-4f2a-8be5-4494854e345d" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (50)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="39f9b953-9c94-c9f5-68f1-59ae1819f41e">
+      <Execution id="bfee1398-a438-4451-9678-07dbafdc40c4" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="Encrypt_EmptyString_ReturnsEmptyString" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="233bec12-3ba7-0c1d-42b6-6858e020b9ba">
+      <Execution id="c0c73af8-8023-4a7d-9c59-b10d0e54c09f" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_EmptyString_ReturnsEmptyString" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (3)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="b6785c09-4f8e-1cd1-3e23-cb481a51a39c">
+      <Execution id="48906524-3403-45db-bdee-9ace40a7670d" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (-1)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="fbaa99dc-65e9-8168-de0b-197254d20346">
+      <Execution id="bbb6adc4-caf8-4639-b409-18a6f725f9c5" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="Decrypt_NullText_ThrowsArgumentNullException" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="93e91684-999c-05e4-0e39-a6a4696405d9">
+      <Execution id="005ccbfb-a621-44ee-980d-7982cb0eb7fc" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_NullText_ThrowsArgumentNullException" />
+    </UnitTest>
+    <UnitTest name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (0)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="4d778658-e9ba-8a62-4128-041b1d407708">
+      <Execution id="e6bc3fcf-acf1-4a99-b449-98e7d3a1b69f" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsGreaterThanTextLength_ReturnsTextUnchanged" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="ad916cb7-e943-f3c7-429e-ec52615b53f8">
+      <Execution id="1844dee6-80ad-42a7-97fa-58406f23ce0e" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsGreaterThanTextLength_ReturnsTextUnchanged" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (2)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="04e2746f-a0b3-1ac7-9bc1-010dc968c379">
+      <Execution id="6acfc1a8-1312-4ca5-9462-82fab8125099" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (101)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="0db1c390-70a3-73fa-4bdc-9327794ccd10">
+      <Execution id="ef600690-d144-4049-9246-1464d72d7714" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (1)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="1f59e57e-1412-56d3-f3c4-fd3d488bcc47">
+      <Execution id="895d5d28-84e9-4af7-a510-76f1d08bd39a" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="Encrypt_TwoRows_ProducesEvenOddSplit" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="bc0620b6-1846-8b66-0baf-31e5d5768983">
+      <Execution id="008b7ee0-6e10-4e5e-a616-3b53a3540ff8" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_TwoRows_ProducesEvenOddSplit" />
+    </UnitTest>
+    <UnitTest name="Visualize_EmptyString_ReturnsEmptyString" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="0304cb93-b952-0c34-0bee-f6a3ea9856cd">
+      <Execution id="1db693f0-722a-4c66-bca4-8612573c6a43" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Visualize_EmptyString_ReturnsEmptyString" />
+    </UnitTest>
+    <UnitTest name="Visualize_ThreeRowsHelloWorld_ReturnsExpectedZigzagGrid" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="c6716d34-77bf-3e87-23f9-5eb91fae556e">
+      <Execution id="c7cd18f3-e861-42a2-b513-76a57bc55601" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Visualize_ThreeRowsHelloWorld_ReturnsExpectedZigzagGrid" />
+    </UnitTest>
+    <UnitTest name="Encrypt_NullText_ThrowsArgumentNullException" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="91937a87-ce32-922e-e9c5-1f4305df87de">
+      <Execution id="e8283d75-4a35-4b38-8610-8a7280df5bba" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_NullText_ThrowsArgumentNullException" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (5)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="1d14601e-6d37-bf5e-ae08-7d4421cea0b2">
+      <Execution id="44917084-ec96-4dfb-b68e-4d4443f54dc2" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="Encrypt_ProducesDifferentTextThanOriginal" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="adf1aca4-0610-3dd0-f80f-85c9cd7833ac">
+      <Execution id="af01839b-fdf7-4649-b7dd-6818297a7e32" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_ProducesDifferentTextThanOriginal" />
+    </UnitTest>
+    <UnitTest name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (101)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="55602890-a1fd-fa0d-d047-a278b4dfe875">
+      <Execution id="c2779f02-5ac7-4a26-bb1b-e8bdf4d43769" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (-3)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="8dd20be4-90a9-eaca-7841-18e606ebace9">
+      <Execution id="2d13601f-745f-4cc6-9b07-87af68c0278a" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="Encrypt_ClassicHelloWorldWithThreeRows_ReturnsExpectedCipher" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="cb14f83c-f0ee-df04-2198-15ccf38c88bb">
+      <Execution id="7a400727-e288-458e-8ba2-0b9f50b2c10a" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_ClassicHelloWorldWithThreeRows_ReturnsExpectedCipher" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (4)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="6af72e57-5229-45bd-608d-c0d71c74a626">
+      <Execution id="07fd6d07-2915-4396-b6c0-6c47ea8d6e76" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_RussianText_RestoresOriginal" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="9b4e722e-4bf8-5743-1240-0376ad155fa5">
+      <Execution id="fab13f62-429f-4f19-a6f5-37c2d17ccc27" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_RussianText_RestoresOriginal" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (1)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="7fedf13c-e9e7-c7e7-adde-ca173b102830">
+      <Execution id="8ad5f62e-379a-4116-a203-3a3215471015" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_DifferentRowCounts_AreReversible (10)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="d92a32fc-6c64-b9b1-8d28-c63ff4976719">
+      <Execution id="6a6bdadd-4592-4615-9ce7-03daca73f429" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_DifferentRowCounts_AreReversible" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsEqualToTextLength_ReturnsTextUnchanged" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="ddda8c83-4a3a-d6bf-4b13-8b998fd64b1e">
+      <Execution id="47b56780-b922-453a-8ac7-a319aca3d39e" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsEqualToTextLength_ReturnsTextUnchanged" />
+    </UnitTest>
+    <UnitTest name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (0)" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="7647eee5-7f17-68a4-86e7-2f8e8ca5d8d9">
+      <Execution id="0ec74d8a-bec5-4be7-a5c2-8914417afba9" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException" />
+    </UnitTest>
+    <UnitTest name="EncryptDecrypt_LongText_RestoresOriginal" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="5ea9b47a-837b-f78c-42d5-6191631441a3">
+      <Execution id="2d137534-97ea-4dc8-9abd-ff24372480cd" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="EncryptDecrypt_LongText_RestoresOriginal" />
+    </UnitTest>
+    <UnitTest name="Decrypt_EmptyString_ReturnsEmptyString" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="ac8f7f32-a1aa-3b0b-1a93-c8d01c7e9312">
+      <Execution id="fb2debb3-ebd1-4133-b65e-d7a26c63d949" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Decrypt_EmptyString_ReturnsEmptyString" />
+    </UnitTest>
+    <UnitTest name="Encrypt_SameTextWithDifferentRows_ProducesDifferentResults" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="21083c3a-0fa3-65c9-7359-2fae955238f9">
+      <Execution id="5cf1884d-cb31-47a0-a860-56a5bbd6f73e" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Encrypt_SameTextWithDifferentRows_ProducesDifferentResults" />
+    </UnitTest>
+    <UnitTest name="Visualize_ContainsAllOriginalCharacters" storage="c:\users\strea\onedrive\рабочий стол\pr7\beelinecipher.tests\bin\debug\net9.0-windows\beelinecipher.tests.dll" id="569f7a1d-52ff-7348-d7be-e552b21d2f53">
+      <Execution id="f3659254-cedf-4962-953e-cf194c5fdabb" />
+      <TestMethod codeBase="C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll" adapterTypeName="executor://mstestadapter/v2" className="BeelineCipher.Tests.BeelineCipherTests" name="Visualize_ContainsAllOriginalCharacters" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fbaa99dc-65e9-8168-de0b-197254d20346" executionId="bbb6adc4-caf8-4639-b409-18a6f725f9c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b4e722e-4bf8-5743-1240-0376ad155fa5" executionId="fab13f62-429f-4f19-a6f5-37c2d17ccc27" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b6785c09-4f8e-1cd1-3e23-cb481a51a39c" executionId="48906524-3403-45db-bdee-9ace40a7670d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d92a32fc-6c64-b9b1-8d28-c63ff4976719" executionId="6a6bdadd-4592-4615-9ce7-03daca73f429" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac8f7f32-a1aa-3b0b-1a93-c8d01c7e9312" executionId="fb2debb3-ebd1-4133-b65e-d7a26c63d949" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ddda8c83-4a3a-d6bf-4b13-8b998fd64b1e" executionId="47b56780-b922-453a-8ac7-a319aca3d39e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="adf1aca4-0610-3dd0-f80f-85c9cd7833ac" executionId="af01839b-fdf7-4649-b7dd-6818297a7e32" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39f9b953-9c94-c9f5-68f1-59ae1819f41e" executionId="bfee1398-a438-4451-9678-07dbafdc40c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cb14f83c-f0ee-df04-2198-15ccf38c88bb" executionId="7a400727-e288-458e-8ba2-0b9f50b2c10a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f59e57e-1412-56d3-f3c4-fd3d488bcc47" executionId="895d5d28-84e9-4af7-a510-76f1d08bd39a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c40a2a8-d081-9fa5-dbcb-edd7beaf3c72" executionId="20f0cc58-ca42-4f2a-8be5-4494854e345d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ea9b47a-837b-f78c-42d5-6191631441a3" executionId="2d137534-97ea-4dc8-9abd-ff24372480cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04e2746f-a0b3-1ac7-9bc1-010dc968c379" executionId="6acfc1a8-1312-4ca5-9462-82fab8125099" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1bbb495c-8a7b-6961-1129-e9a66db94ca9" executionId="960a0a22-3f4f-4a05-9b41-a01c9f9d6e0c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6716d34-77bf-3e87-23f9-5eb91fae556e" executionId="c7cd18f3-e861-42a2-b513-76a57bc55601" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ad916cb7-e943-f3c7-429e-ec52615b53f8" executionId="1844dee6-80ad-42a7-97fa-58406f23ce0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7647eee5-7f17-68a4-86e7-2f8e8ca5d8d9" executionId="0ec74d8a-bec5-4be7-a5c2-8914417afba9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0db1c390-70a3-73fa-4bdc-9327794ccd10" executionId="ef600690-d144-4049-9246-1464d72d7714" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="569f7a1d-52ff-7348-d7be-e552b21d2f53" executionId="f3659254-cedf-4962-953e-cf194c5fdabb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d14601e-6d37-bf5e-ae08-7d4421cea0b2" executionId="44917084-ec96-4dfb-b68e-4d4443f54dc2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc0620b6-1846-8b66-0baf-31e5d5768983" executionId="008b7ee0-6e10-4e5e-a616-3b53a3540ff8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8b527d74-31ae-d128-7077-bc7b2e77caf6" executionId="ebfb603c-4b66-4a8a-80e6-333ae1f24d1d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93e91684-999c-05e4-0e39-a6a4696405d9" executionId="005ccbfb-a621-44ee-980d-7982cb0eb7fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d778658-e9ba-8a62-4128-041b1d407708" executionId="e6bc3fcf-acf1-4a99-b449-98e7d3a1b69f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="836d6df2-f490-5daa-2a98-b957a0eb1c02" executionId="20936754-41ef-4a53-8b62-8734f1fbee6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0304cb93-b952-0c34-0bee-f6a3ea9856cd" executionId="1db693f0-722a-4c66-bca4-8612573c6a43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8dd20be4-90a9-eaca-7841-18e606ebace9" executionId="2d13601f-745f-4cc6-9b07-87af68c0278a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7fedf13c-e9e7-c7e7-adde-ca173b102830" executionId="8ad5f62e-379a-4116-a203-3a3215471015" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="01e94b31-84c0-bd94-7a91-84e5397b16eb" executionId="cf2bddff-014f-4491-96a3-9bf72a61ff7c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6af72e57-5229-45bd-608d-c0d71c74a626" executionId="07fd6d07-2915-4396-b6c0-6c47ea8d6e76" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91937a87-ce32-922e-e9c5-1f4305df87de" executionId="e8283d75-4a35-4b38-8610-8a7280df5bba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="55602890-a1fd-fa0d-d047-a278b4dfe875" executionId="c2779f02-5ac7-4a26-bb1b-e8bdf4d43769" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21083c3a-0fa3-65c9-7359-2fae955238f9" executionId="5cf1884d-cb31-47a0-a860-56a5bbd6f73e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="233bec12-3ba7-0c1d-42b6-6858e020b9ba" executionId="c0c73af8-8023-4a7d-9c59-b10d0e54c09f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Список результатов" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Все загруженные результаты" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="34" executed="34" passed="34" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>Включена параллелизация тестов для C:\Users\strea\OneDrive\Рабочий стол\PR7\BeelineCipher.Tests\bin\Debug\net9.0-windows\BeelineCipher.Tests.dll (рабочие роли: 16, область: MethodLevel)&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
