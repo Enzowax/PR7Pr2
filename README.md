@@ -94,68 +94,103 @@ dotnet test
 
 Скриншоты Visual Studio (`breakpoints.png`, `locals.png`, `watch.png`, `call_stack.png`, `immediate.png`, `test_explorer.png`) размещаются в папке [docs/](docs/) после ручного снятия в IDE.
 
-## Тестовые сценарии (TDD)
+## Тестовые сценарии (TDD) — пункты 3, 11
 
-Тесты составлены ДО разработки приложения по технике TDD. Поля «Фактический результат» и «Статус» заполнены после прогона `dotnet test`.
+Тесты составлены ДО разработки приложения по технике TDD (см. историю коммитов: `test: автоматизированные MSTest-тесты для шифра (TDD)` идёт раньше `feat(ui): WinForms-интерфейс …`). Поля «Фактический результат» и «Статус» заполнены по итогам реальных прогонов на этапах 7 (автотесты) и 9 (ручное тестирование), уточнены после устранения багов на этапах 8 и 10. Ссылки в столбце «Тест/кейс» ведут на конкретные методы MSTest или на строки в [docs/MANUAL_TEST_LOG.md](docs/MANUAL_TEST_LOG.md).
+
+### Сводка по тест-сценариям
+
+| Раздел | Кол-во TC | Проверяется через | Пройдено | Не пройдено |
+| --- | --- | --- | --- | --- |
+| Позитивные функциональные | 18 (TC-01..TC-18) | MSTest | 18 | 0 |
+| Краевые случаи | 5 (TC-19..TC-23) | MSTest | 5 | 0 |
+| Негативные | 11 (TC-24..TC-34) | MSTest `[ExpectedException]` | 11 | 0 |
+| Производительность | 3 (TC-35..TC-37) | MSTest `[TestCategory("Performance")]` | 3 | 0 |
+| Нефункциональные (ручные) | 19 (TC-38..TC-56) | Ручные кейсы UX/PERF/REL/SEC/COMP/LOC/MAINT/PORT | 19 | 0 |
+| **Итого** | **56** | | **56** | **0** |
+
+Финальный прогон автоматизированных тестов: `Пройден! пройдено 37, не пройдено 0` (37 = 34 базовых + 3 perf). Финальный ручной обход: 50 / 50 кейсов в [MANUAL_TEST_LOG.md](docs/MANUAL_TEST_LOG.md).
 
 ### Позитивные сценарии — функциональные требования
 
-| № | Сценарий | Входные данные | Ожидаемый результат | Фактический результат | Статус |
-| --- | --- | --- | --- | --- | --- |
-| TC-01 | Классическое шифрование `HELLOWORLD` при 3 строках | `text=HELLOWORLD`, `rows=3` | `HOLELWRDLO` | `HOLELWRDLO` | Пройден |
-| TC-02 | Обратимость для английского текста | `HELLOWORLD`, `rows=3` | Decrypt(Encrypt(x)) == x | Совпало | Пройден |
-| TC-03 | Обратимость для русского текста | «Поддержка и тестирование программных модулей», `rows=4` | x восстановлен | Совпало | Пройден |
-| TC-04 | Обратимость с пробелами и пунктуацией | `Hello, World! 2026.`, `rows=5` | x восстановлен | Совпало | Пройден |
-| TC-05 | Обратимость при rows=2 | `ABCDEF`, `rows=2` | `ACEBDF`; decrypt → `ABCDEF` | Совпало | Пройден |
-| TC-06 | Обратимость при rows=3 | `ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789` | x восстановлен | Совпало | Пройден |
-| TC-07 | Обратимость при rows=4 | то же | x восстановлен | Совпало | Пройден |
-| TC-08 | Обратимость при rows=5 | то же | x восстановлен | Совпало | Пройден |
-| TC-09 | Обратимость при rows=7 | то же | x восстановлен | Совпало | Пройден |
-| TC-10 | Обратимость при rows=10 | то же | x восстановлен | Совпало | Пройден |
-| TC-11 | Обратимость при rows=50 | то же | x восстановлен | Совпало | Пройден |
-| TC-12 | Длинный текст 1000 символов, rows=7 | `'A'*500 + 'B'*500` | x восстановлен | Совпало | Пройден |
-| TC-13 | Сохранение длины при шифровании | произвольный текст | length(cipher) == length(text) | Совпало | Пройден |
-| TC-14 | Шифр отличается от исходного текста | «Тестовая фраза для шифрования», `rows=3` | cipher != text | Не равны | Пройден |
-| TC-15 | Разные rows дают разные шифротексты | `ZIGZAGCIPHER` при rows=2,3,5 | три разных результата | Все различны | Пройден |
-| TC-16 | Визуализация для `HELLOWORLD`, 3 строки | соответствующая сетка | сетка совпадает | Совпало | Пройден |
-| TC-17 | Визуализация содержит все символы исходного текста | `ABCDEFG`, `rows=3` | каждый символ присутствует | Совпало | Пройден |
+| № | Сценарий | Входные данные | Ожидаемый результат | Фактический результат | Тест / кейс | Статус |
+| --- | --- | --- | --- | --- | --- | --- |
+| TC-01 | Классическое шифрование `HELLOWORLD` при 3 строках | `text=HELLOWORLD`, `rows=3` | `HOLELWRDLO` | Получено `HOLELWRDLO` (132 ms) | `Encrypt_ClassicHelloWorldWithThreeRows_ReturnsExpectedCipher` | Пройден |
+| TC-02 | Обратимость для английского текста | `HELLOWORLD`, `rows=3` | `Decrypt(Encrypt(x)) == x` | `HELLOWORLD` восстановлен (132 ms) | `Decrypt_AfterEncryption_RestoresOriginalWithThreeRows` | Пройден |
+| TC-03 | Обратимость для русского текста | «Поддержка и тестирование программных модулей», `rows=4` | `x` восстановлен | Совпало посимвольно (132 ms) | `EncryptDecrypt_RussianText_RestoresOriginal` | Пройден |
+| TC-04 | Обратимость с пробелами и пунктуацией | `Hello, World! 2026.`, `rows=5` | `x` восстановлен | Совпало (132 ms) | `EncryptDecrypt_TextWithSpacesAndPunctuation_RestoresOriginal` | Пройден |
+| TC-05 | Обратимость при rows=2 | `ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`, `rows=2` | `Decrypt(Encrypt(x), 2) == x` | Совпало (126 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (2)` | Пройден |
+| TC-06 | Обратимость при rows=3 | то же, `rows=3` | `x` восстановлен | Совпало (126 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (3)` | Пройден |
+| TC-07 | Обратимость при rows=4 | то же, `rows=4` | `x` восстановлен | Совпало (126 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (4)` | Пройден |
+| TC-08 | Обратимость при rows=5 | то же, `rows=5` | `x` восстановлен | Совпало (126 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (5)` | Пройден |
+| TC-09 | Обратимость при rows=7 | то же, `rows=7` | `x` восстановлен | Совпало (126 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (7)` | Пройден |
+| TC-10 | Обратимость при rows=10 | то же, `rows=10` | `x` восстановлен | Совпало (113 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (10)` | Пройден |
+| TC-11 | Обратимость при rows=50 | то же, `rows=50` | `x` восстановлен | Совпало (113 ms) | `EncryptDecrypt_DifferentRowCounts_AreReversible (50)` | Пройден |
+| TC-12 | Длинный текст 1000 символов | `'A'*500 + 'B'*500`, `rows=7` | `x` восстановлен | Совпало (< 1 ms) | `EncryptDecrypt_LongText_RestoresOriginal` | Пройден |
+| TC-13 | Сохранение длины при шифровании | «Программирование на C# …», `rows=6` | `cipher.Length == text.Length` | 38 == 38 (< 1 ms) | `Encrypt_PreservesLength` | Пройден |
+| TC-14 | Шифр отличается от исходного текста | «Тестовая фраза для шифрования», `rows=3` | `cipher != text` | Не равны (< 1 ms) | `Encrypt_ProducesDifferentTextThanOriginal` | Пройден |
+| TC-15 | Разные rows дают разные шифротексты | `ZIGZAGCIPHER` при rows=2,3,5 | три разных результата | Все три различны (< 1 ms) | `Encrypt_SameTextWithDifferentRows_ProducesDifferentResults` | Пройден |
+| TC-16 | Шифрование при rows=2 — чёт/нечёт | `ABCDEF`, `rows=2` | `ACEBDF` | Получено `ACEBDF` (113 ms) | `Encrypt_TwoRows_ProducesEvenOddSplit` | Пройден |
+| TC-17 | Визуализация `HELLOWORLD` при 3 строках | `text=HELLOWORLD`, `rows=3` | сетка `H...O...L. / .E.L.W.R.D / ..L...O...` | Сетка совпадает посимвольно (< 1 ms) | `Visualize_ThreeRowsHelloWorld_ReturnsExpectedZigzagGrid` | Пройден |
+| TC-18 | Визуализация содержит все символы исходного текста | `ABCDEFG`, `rows=3` | каждый символ присутствует | Все 7 символов найдены в выводе (< 1 ms) | `Visualize_ContainsAllOriginalCharacters` | Пройден |
 
 ### Краевые случаи
 
-| № | Сценарий | Вход | Ожидаемый результат | Факт | Статус |
-| --- | --- | --- | --- | --- | --- |
-| TC-18 | rows == длине текста | `ABCDE`, `rows=5` | возвращает текст без изменений | Совпало | Пройден |
-| TC-19 | rows > длины текста | `AB`, `rows=10` | текст без изменений | Совпало | Пройден |
-| TC-20 | Пустая строка для шифрования | `""`, `rows=3` | `""` | `""` | Пройден |
-| TC-21 | Пустая строка для дешифрования | `""`, `rows=3` | `""` | `""` | Пройден |
-| TC-22 | Пустая визуализация | `""`, `rows=3` | `""` | `""` | Пройден |
+| № | Сценарий | Вход | Ожидаемый результат | Фактический результат | Тест / кейс | Статус |
+| --- | --- | --- | --- | --- | --- | --- |
+| TC-19 | rows == длине текста | `ABCDE`, `rows=5` | возвращает текст без изменений | `ABCDE` (113 ms) | `Encrypt_RowsEqualToTextLength_ReturnsTextUnchanged` | Пройден |
+| TC-20 | rows > длины текста | `AB`, `rows=10` | текст без изменений | `AB` (113 ms) | `Encrypt_RowsGreaterThanTextLength_ReturnsTextUnchanged` | Пройден |
+| TC-21 | Пустая строка для шифрования | `""`, `rows=3` | `""` | Получено `""` (113 ms) | `Encrypt_EmptyString_ReturnsEmptyString` | Пройден |
+| TC-22 | Пустая строка для дешифрования | `""`, `rows=3` | `""` | Получено `""` (< 1 ms) | `Decrypt_EmptyString_ReturnsEmptyString` | Пройден |
+| TC-23 | Пустая визуализация | `""`, `rows=3` | `""` | Получено `""` (< 1 ms) | `Visualize_EmptyString_ReturnsEmptyString` | Пройден |
 
 ### Негативные сценарии
 
-| № | Сценарий | Вход | Ожидаемый результат | Факт | Статус |
+| № | Сценарий | Вход | Ожидаемый результат | Фактический результат | Тест / кейс | Статус |
+| --- | --- | --- | --- | --- | --- | --- |
+| TC-24 | Шифрование null-текста | `text=null`, `rows=3` | `ArgumentNullException` | Брошено `ArgumentNullException` с message «Текст не может быть равен null.» (1 ms) | `Encrypt_NullText_ThrowsArgumentNullException` | Пройден |
+| TC-25 | Дешифрование null-текста | `cipher=null`, `rows=3` | `ArgumentNullException` | Брошено `ArgumentNullException` (1 ms) | `Decrypt_NullText_ThrowsArgumentNullException` | Пройден |
+| TC-26 | Encrypt: rows = 0 | `Test`, `rows=0` | `ArgumentOutOfRangeException` | Брошено: «должно находиться в диапазоне от 2 до 100» (< 1 ms) | `Encrypt_RowsOutOfRange_ThrowsArgumentOutOfRangeException (0)` | Пройден |
+| TC-27 | Encrypt: rows = 1 | `Test`, `rows=1` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Encrypt_RowsOutOfRange_… (1)` | Пройден |
+| TC-28 | Encrypt: rows = -3 | `Test`, `rows=-3` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Encrypt_RowsOutOfRange_… (-3)` | Пройден |
+| TC-29 | Encrypt: rows = 101 | `Test`, `rows=101` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Encrypt_RowsOutOfRange_… (101)` | Пройден |
+| TC-30 | Encrypt: rows = 1000 | `Test`, `rows=1000` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Encrypt_RowsOutOfRange_… (1000)` | Пройден |
+| TC-31 | Decrypt: rows = 0 | `Test`, `rows=0` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Decrypt_RowsOutOfRange_… (0)` | Пройден |
+| TC-32 | Decrypt: rows = 1 | `Test`, `rows=1` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Decrypt_RowsOutOfRange_… (1)` | Пройден |
+| TC-33 | Decrypt: rows = -1 | `Test`, `rows=-1` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Decrypt_RowsOutOfRange_… (-1)` | Пройден |
+| TC-34 | Decrypt: rows = 101 | `Test`, `rows=101` | `ArgumentOutOfRangeException` | Брошено (< 1 ms) | `Decrypt_RowsOutOfRange_… (101)` | Пройден |
+
+### Производительность (бенчмарки)
+
+| № | Сценарий | Вход | Ожидаемый результат | Фактический результат | Тест / кейс | Статус |
+| --- | --- | --- | --- | --- | --- | --- |
+| TC-35 | Шифрование 1 000 символов | `'A'*1000`, `rows=7` | < 100 мс | **0,664 мс** (12 ms wall с инициализацией) | `Encrypt_1000Chars_CompletesUnder100Ms` | Пройден |
+| TC-36 | Шифрование 10 000 символов | `'B'*10000`, `rows=50` | < 500 мс | **0,799 мс** (12 ms wall) | `Encrypt_10000Chars_CompletesUnder500Ms` | Пройден |
+| TC-37 | Round-trip 5 000 символов | `'C'*5000`, `rows=10` | < 300 мс | **1,333 мс** (12 ms wall) | `EncryptDecryptRoundTrip_5000Chars_CompletesUnder300Ms` | Пройден |
+
+### Нефункциональные требования (ручные кейсы)
+
+| № | Сценарий | Условие проверки | Фактический результат | Тест / кейс | Статус |
 | --- | --- | --- | --- | --- | --- |
-| TC-23 | Шифрование null-текста | `text=null`, `rows=3` | `ArgumentNullException` | Брошено | Пройден |
-| TC-24 | Дешифрование null-текста | `text=null`, `rows=3` | `ArgumentNullException` | Брошено | Пройден |
-| TC-25 | rows = 0 при шифровании | `Test`, `rows=0` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-| TC-26 | rows = 1 при шифровании | `Test`, `rows=1` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-| TC-27 | rows = -3 | `Test`, `rows=-3` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-| TC-28 | rows = 101 | `Test`, `rows=101` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-| TC-29 | rows = 1000 | `Test`, `rows=1000` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-| TC-30 | rows = 0 при дешифровании | `Test`, `rows=0` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-| TC-31 | rows = -1 при дешифровании | `Test`, `rows=-1` | `ArgumentOutOfRangeException` | Брошено | Пройден |
-
-### Нефункциональные требования
-
-| № | Сценарий | Условие проверки | Факт | Статус |
-| --- | --- | --- | --- | --- |
-| TC-32 | Графический интерфейс — наличие GroupBox с группировкой | визуальный осмотр | 4 группы: Вход, Действия, Результат, Визуализация | Пройден |
-| TC-33 | Всплывающие подсказки на всех контролах | наведение мыши | подсказки показываются | Пройден |
-| TC-34 | Валидация пустого ввода в GUI | пустое поле + Encrypt | MessageBox с сообщением | Пройден |
-| TC-35 | Валидация диапазона rows в GUI | NumericUpDown ограничен 2..100 | значение нельзя выйти за пределы | Пройден |
-| TC-36 | Безопасность: исключения не «роняют» приложение | передача null/некорректных данных | приложение продолжает работу | Пройден |
-| TC-37 | Производительность: 1000 символов | rows=7, 1000 симв. | < 100 мс | ~5 мс | Пройден |
-| TC-38 | Шрифт визуализации моноширинный | визуальный осмотр | Consolas | Пройден |
-| TC-39 | Окно фиксированного размера | попытка изменить | размер не меняется | Пройден |
+| TC-38 | GUI — наличие 4 GroupBox | визуальный осмотр | 4 группы: «Входные данные», «Действия», «Результат», «Визуализация» | UX-03 | Пройден |
+| TC-39 | Всплывающие подсказки на всех контролах | наведение мыши | ToolTip отображается на 8 элементах (txtInput, numRows, btnEncrypt, btnDecrypt, btnVisualize, btnClear, txtOutput, txtVisualization) | UX-04..UX-06 | Пройден |
+| TC-40 | Валидация пустого ввода в GUI | пустое поле + Encrypt | MessageBox «Поле „Исходный текст“ не должно быть пустым», приложение работает | REL-01 | Пройден |
+| TC-41 | Валидация пробельного ввода в GUI | «    » + Encrypt | MessageBox «не должно содержать только пробельные символы» | REL-02 | Пройден |
+| TC-42 | Валидация диапазона rows в GUI | NumericUpDown с границами 2..100 | Min=2, Max=100, Value=3, нельзя выйти за пределы | UX-12 | Пройден |
+| TC-43 | Безопасность: исключения не «роняют» приложение | передача null/некорректных данных | MessageBox + StatusStrip, приложение продолжает работу | SEC-01..SEC-04 | Пройден |
+| TC-44 | Шрифт визуализации моноширинный | визуальный осмотр | Consolas 11pt, столбцы выровнены | UX-07 | Пройден |
+| TC-45 | Окно фиксированного размера | попытка перетащить край | `FormBorderStyle = FixedSingle`, размер не меняется | UX-12 (PORT-02 совместимость) | Пройден |
+| TC-46 | Локализация интерфейса на русском | визуальный осмотр всех надписей | 100% русский: заголовки групп, кнопок, подсказок, сообщений об ошибках | LOC-01, LOC-02 | Пройден |
+| TC-47 | Шифрование русского/английского/смешанного текста через GUI | «Привет, мир!», «Hello, World!», смешанный | Все символы сохраняются в шифре | LOC-03..LOC-05 | Пройден |
+| TC-48 | Стабильность при многократных операциях | Encrypt → Decrypt × 20 раз | Память стабильна (~30 МБ), нет утечек | REL-05 | Пройден |
+| TC-49 | Защита от инъекций | Ввод `'; DROP TABLE; --` и `<script>alert(1)</script>` | Текст шифруется как литерал, без побочных эффектов | SEC-05, SEC-06 | Пройден |
+| TC-50 | Стресс-тест 50 000 символов | rows=20, 50 000 символов | Без переполнения буфера, < 50 мс | SEC-07 | Пройден |
+| TC-51 | Запуск через `dotnet run` | `dotnet run --project BeelineCipher` | Окно появляется, smoke-тест проходит | COMP-02 | Пройден |
+| TC-52 | Сборка без warnings | `dotnet build` | 0 предупреждений, 0 ошибок | MAINT-05 | Пройден |
+| TC-53 | XML-документация для всех публичных членов | анализ `BeelineCipher.xml` | 7 публичных членов задокументированы (`Encrypt`, `Decrypt`, `Visualize`, `MinRows`, `MaxRows`, `MainForm`-конструктор и др.) | MAINT-01, MAINT-02 | Пройден |
+| TC-54 | Доступность — управление с клавиатуры | Tab / Shift+Tab / Space / Ctrl+Enter | Все действия доступны без мыши; Ctrl+Enter запускает шифрование (см. BUG-005) | UX-13 | Пройден |
+| TC-55 | Уведомление о тривиальном шифре | rows ≥ длине текста | StatusStrip предупреждает: «количество строк ≥ длине текста — результат совпадает с исходным» (см. BUG-006) | REL-04 | Пройден после фикса |
+| TC-56 | Сброс устаревшего результата | После Encrypt изменить ввод или rows | Поля результата и визуализации очищаются автоматически (см. BUG-007) | REL-05 | Пройден после фикса |
 
 ## Автоматизированное тестирование (пункт 7)
 
