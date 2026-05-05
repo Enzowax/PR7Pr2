@@ -1,0 +1,44 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+## Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## Rider / VSCode
+.idea/
+.vscode/
+*.swp
+
+## Test results
+TestResults/
+[Cc]overage/
+*.coverage
+*.coveragexml
+
+## NuGet
+*.nupkg
+.nuget/
+packages/
+
+## ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+## Misc
+*.log
+*.pidb
+*.svclog
+*.scc
+Thumbs.db
+.DS_Store
