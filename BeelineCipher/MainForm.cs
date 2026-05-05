@@ -17,6 +17,7 @@ namespace BeelineCipher
         {
             InitializeComponent();
             ConfigureToolTips();
+            WireUpInputEvents();
         }
 
         /// <summary>
@@ -24,14 +25,74 @@ namespace BeelineCipher
         /// </summary>
         private void ConfigureToolTips()
         {
-            toolTip.SetToolTip(txtInput, "Введите исходный текст для шифрования или дешифрования.");
+            toolTip.SetToolTip(txtInput, "Введите исходный текст для шифрования или дешифрования. Ctrl+Enter — быстрое шифрование.");
             toolTip.SetToolTip(numRows, $"Количество строк зигзага (от {BeelineCipherCore.MinRows} до {BeelineCipherCore.MaxRows}).");
-            toolTip.SetToolTip(btnEncrypt, "Зашифровать текст методом записи в N строк зигзагом.");
+            toolTip.SetToolTip(btnEncrypt, "Зашифровать текст методом записи в N строк зигзагом (Ctrl+Enter).");
             toolTip.SetToolTip(btnDecrypt, "Расшифровать текст, зашифрованный с тем же количеством строк.");
             toolTip.SetToolTip(btnVisualize, "Показать визуальное заполнение зигзагообразной матрицы.");
             toolTip.SetToolTip(btnClear, "Очистить все поля ввода и вывода.");
             toolTip.SetToolTip(txtOutput, "Здесь будет выведен результат шифрования или дешифрования.");
             toolTip.SetToolTip(txtVisualization, "Графическое представление заполнения матрицы шифра.");
+        }
+
+        /// <summary>
+        /// Привязывает обработчики событий поля ввода:
+        /// клавиатурное ускорение Ctrl+Enter (исправление BUG-005)
+        /// и автоматическую очистку устаревшего результата (исправление BUG-007).
+        /// </summary>
+        private void WireUpInputEvents()
+        {
+            txtInput.KeyDown += TxtInput_KeyDown;
+            txtInput.TextChanged += TxtInput_TextChanged;
+            numRows.ValueChanged += NumRows_ValueChanged;
+        }
+
+        /// <summary>
+        /// Обработчик нажатия клавиш в поле ввода. Ctrl+Enter запускает шифрование
+        /// (исправление BUG-005 — раньше у пользователя не было способа быстро запустить
+        /// операцию с клавиатуры в многострочном поле).
+        /// </summary>
+        private void TxtInput_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                BtnEncrypt_Click(btnEncrypt, EventArgs.Empty);
+            }
+        }
+
+        /// <summary>
+        /// Очищает поля результата и визуализации, когда пользователь редактирует
+        /// исходный текст (исправление BUG-007 — раньше старый шифр оставался видимым
+        /// и мог ввести в заблуждение).
+        /// </summary>
+        private void TxtInput_TextChanged(object? sender, EventArgs e)
+        {
+            ResetStaleOutput();
+        }
+
+        /// <summary>
+        /// Очищает поля результата при изменении количества строк
+        /// (исправление BUG-007 — старый результат был построен с другим rows).
+        /// </summary>
+        private void NumRows_ValueChanged(object? sender, EventArgs e)
+        {
+            ResetStaleOutput();
+        }
+
+        /// <summary>
+        /// Очищает выходные поля и обновляет строку состояния.
+        /// </summary>
+        private void ResetStaleOutput()
+        {
+            if (txtOutput.TextLength == 0 && txtVisualization.TextLength == 0)
+            {
+                return;
+            }
+
+            txtOutput.Clear();
+            txtVisualization.Clear();
+            statusLabel.Text = "Параметры изменены — результат сброшен.";
         }
 
         /// <summary>
@@ -102,7 +163,20 @@ namespace BeelineCipher
 
                 txtOutput.Text = operation(input, rows);
                 txtVisualization.Text = BeelineCipherCore.Visualize(input, rows);
-                statusLabel.Text = $"{successMessage}. Длина: {input.Length} символов, строк: {rows}.";
+
+                // Исправление BUG-006: при rows >= длины текста алгоритм Rail Fence
+                // возвращает текст без изменений. Раньше пользователь видел совпадение
+                // ввода и вывода и мог решить, что приложение «не работает». Теперь
+                // явно предупреждаем об этом в строке состояния.
+                if (rows >= input.Length)
+                {
+                    statusLabel.Text = $"{successMessage}, но количество строк ({rows}) ≥ длине текста ({input.Length}) — " +
+                                       "результат совпадает с исходным текстом. Уменьшите rows для нетривиального шифрования.";
+                }
+                else
+                {
+                    statusLabel.Text = $"{successMessage}. Длина: {input.Length} символов, строк: {rows}.";
+                }
             }
             catch (ArgumentNullException ex)
             {

@@ -238,14 +238,24 @@ dotnet test
 
 Smoke-testing, sanity testing, usability testing, boundary testing, stress testing, endurance testing, accessibility testing, compatibility testing, localization testing, negative testing. Подробное соответствие тест-кейсам — в [MANUAL_TEST_LOG.md](docs/MANUAL_TEST_LOG.md).
 
-## Баг-репорт по результатам автоматизированного тестирования (пункт 8)
+## Сводный баг-репорт (пункты 8 и 10)
 
-Подробный баг-репорт с реальными выводами `dotnet test` приведён в [docs/BUG_REPORT.md](docs/BUG_REPORT.md).
+Подробный баг-репорт с реальными выводами `dotnet test` и шагами воспроизведения каждого бага приведён в [docs/BUG_REPORT.md](docs/BUG_REPORT.md).
+
+### Баги автоматизированного тестирования (пункт 8)
 
 | ID | Описание | Severity | Найден тестами | Файл / строка | Статус |
 | --- | --- | --- | --- | --- | --- |
 | BUG-001 | Off-by-one в условии смены направления зигзага: `currentRow == rows` вместо `rows - 1` → `IndexOutOfRangeException` при шифровании | Critical | 15 / 34 (`Encrypt_*`, `EncryptDecrypt_*`) | `BeelineCipherCore.cs:59` | Исправлен |
 | BUG-002 | Пропущена инверсия `direction = -direction` в `Decrypt` → монотонный рост индекса и `IndexOutOfRangeException` при дешифровании | Critical | 10 / 34 (тесты обратимости и `Decrypt_*`) | `BeelineCipherCore.cs:106` | Исправлен |
+
+### Баги ручного тестирования (пункт 10)
+
+| ID | Описание | Severity | Найден кейсом | Модуль | Статус |
+| --- | --- | --- | --- | --- | --- |
+| BUG-005 | Отсутствует быстрый запуск шифрования с клавиатуры в многострочном поле ввода — у пользователя нет keyboard accelerator | Minor | UX-13 (доступность через клавиатуру) | `MainForm` | Исправлен — добавлен Ctrl+Enter |
+| BUG-006 | Тихий «no-op» при `rows ≥ длине текста`: результат совпадает с исходным текстом без явного предупреждения, пользователь думает, что приложение зависло | Major | REL-04 (граничное rows = 100) | `MainForm.ExecuteCipherOperation` | Исправлен — предупреждение в StatusBar |
+| BUG-007 | Устаревший результат остаётся в полях вывода после редактирования ввода или изменения rows — пользователь может скопировать неактуальное значение | Major | REL-05 (многократные операции) | `MainForm` | Исправлен — авто-сброс через TextChanged/ValueChanged |
 
 ### Процессные замечания (устранены при разработке)
 
