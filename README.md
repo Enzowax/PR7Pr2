@@ -71,20 +71,28 @@ dotnet test
 
 ## Применённые средства отладки Visual Studio
 
-В процессе разработки и отладки приложения использовались встроенные средства Microsoft Visual Studio 2022:
+В процессе разработки и отладки приложения использовались встроенные средства Microsoft Visual Studio 2022. Подробный отчёт о пошаговой отладочной сессии с трассировкой переменных приведён в [docs/DEBUG_SESSION.md](docs/DEBUG_SESSION.md). Сжатый перечень применённых средств:
 
-1. **Точки останова (Breakpoints)** — расставлены в `BeelineCipherCore.Encrypt`, `Decrypt` и `Visualize` для пошагового анализа заполнения зигзага.
-2. **Условные точки останова (Conditional Breakpoints)** — например, `currentRow == rows - 1`, чтобы перехватывать смену направления зигзага.
-3. **Окно «Локальные» (Locals)** — наблюдение за значениями `currentRow`, `direction`, содержимым массива `rails[]`.
+1. **Точки останова (Breakpoints)** — 7 точек, расставлены в `BeelineCipherCore.Encrypt`, `Decrypt`, `Visualize` и в обработчиках `MainForm` для пошагового анализа.
+2. **Условные точки останова (Conditional Breakpoints)** — `currentRow == rows - 1`, чтобы перехватывать смену направления зигзага.
+3. **Окно «Локальные» (Locals)** — наблюдение за значениями `currentRow`, `direction`, содержимым массива `rails[]`, см. таблицу значений в DEBUG_SESSION.md.
 4. **Окно «Видимые» (Autos)** — автоматический показ переменных, задействованных в текущей строке.
-5. **Окно «Контрольные значения» (Watch)** — отслеживание выражений `rails[currentRow].ToString()` и `rowIndexForPosition[i]`.
-6. **Окно «Стек вызовов» (Call Stack)** — анализ цепочки вызовов из обработчиков кнопок к ядру шифра.
-7. **Окно «Интерпретация» (Immediate Window)** — оперативный вызов `BeelineCipherCore.Encrypt("ABCDEF", 2)` для быстрых проверок.
+5. **Окно «Контрольные значения» (Watch)** — отслеживание выражений `rails[i].ToString()`, `result.ToString()`, `rowIndexForPosition[i]`.
+6. **Окно «Стек вызовов» (Call Stack)** — анализ цепочки `BtnEncrypt_Click → ExecuteCipherOperation → Encrypt → ValidateInputs`.
+7. **Окно «Интерпретация» (Immediate Window)** — оперативный вызов `BeelineCipherCore.Encrypt("Test", 1)` для проверки `ArgumentOutOfRangeException`.
 8. **Шаги отладки**: F10 (Step Over), F11 (Step Into), Shift+F11 (Step Out), F5 (Continue).
 9. **DataTip** — наведение на переменную в редакторе для просмотра её значения.
-10. **Обозреватель тестов (Test Explorer)** — запуск, перезапуск и отладка отдельных тестов.
+10. **Обозреватель тестов (Test Explorer)** — запуск, перезапуск и отладка отдельных тестов через Debug Selected Tests.
 11. **Покрытие кода** — анализ покрытия модулей шифрования / дешифрования автоматизированными тестами.
 12. **Diagnostic Tools** — мониторинг ЦП и памяти при шифровании больших строк (500+ символов).
+
+Прогоны отладки включали:
+
+- **Прогон №1** — позитивный сценарий `Encrypt("HELLOWORLD", 3)` → `"HOLELWRDLO"` и обратное `Decrypt` с восстановлением исходного текста.
+- **Прогон №2** — негативный сценарий валидации GUI: пустой ввод → `MessageBox` без падения приложения.
+- **Прогон №3** — проверка `ArgumentOutOfRangeException` через окно Immediate при rows = 1.
+
+Скриншоты Visual Studio (`breakpoints.png`, `locals.png`, `watch.png`, `call_stack.png`, `immediate.png`, `test_explorer.png`) размещаются в папке [docs/](docs/) после ручного снятия в IDE.
 
 ## Тестовые сценарии (TDD)
 

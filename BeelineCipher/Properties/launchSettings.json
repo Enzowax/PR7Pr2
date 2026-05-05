@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "BeelineCipher": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    },
+    "BeelineCipher (Debug)": {
+      "commandName": "Project",
+      "nativeDebugging": true,
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
