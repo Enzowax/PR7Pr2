@@ -247,5 +247,24 @@ namespace BeelineCipher.Tests
             Assert.AreNotEqual(withThree, withFive);
             Assert.AreNotEqual(withTwo, withFive);
         }
+
+        [TestMethod]
+        public void EncryptDecrypt_RealRussianPhrase_AreMutualInverses()
+        {
+
+            string original = "Привет мир!";
+            int rows = 4;
+
+            string encrypted = BeelineCipherCore.Encrypt(original, rows);
+            string decryptedBack = BeelineCipherCore.Decrypt(encrypted, rows);
+            Assert.AreEqual(original, decryptedBack, "Decrypt(Encrypt(x)) ≠ x");
+
+            string decrypted = BeelineCipherCore.Decrypt(original, rows);
+            string encryptedBack = BeelineCipherCore.Encrypt(decrypted, rows);
+            Assert.AreEqual(original, encryptedBack, "Encrypt(Decrypt(x)) ≠ x");
+
+            Assert.AreNotEqual(encrypted, decrypted,
+                "Encrypt и Decrypt должны давать разные результаты для одного входа");
+        }
     }
 }

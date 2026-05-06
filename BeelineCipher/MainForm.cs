@@ -96,19 +96,22 @@ namespace BeelineCipher
         }
 
         /// <summary>
-        /// Обработчик нажатия кнопки «Зашифровать».
+        /// Обработчик нажатия кнопки «Зашифровать». Визуализация строится по входному
+        /// открытому тексту: чтение строк зигзага сверху вниз даст шифр.
         /// </summary>
         private void BtnEncrypt_Click(object sender, EventArgs e)
         {
-            ExecuteCipherOperation(BeelineCipherCore.Encrypt, "Зашифровано");
+            ExecuteCipherOperation(BeelineCipherCore.Encrypt, "Зашифровано", visualizeOutput: false);
         }
 
         /// <summary>
-        /// Обработчик нажатия кнопки «Расшифровать».
+        /// Обработчик нажатия кнопки «Расшифровать». Визуализация строится по
+        /// результату дешифрования (восстановленному открытому тексту), чтобы
+        /// чтение строк зигзага сверху вниз давало введённый шифр (исправление BUG-008).
         /// </summary>
         private void BtnDecrypt_Click(object sender, EventArgs e)
         {
-            ExecuteCipherOperation(BeelineCipherCore.Decrypt, "Расшифровано");
+            ExecuteCipherOperation(BeelineCipherCore.Decrypt, "Расшифровано", visualizeOutput: true);
         }
 
         /// <summary>
@@ -152,7 +155,13 @@ namespace BeelineCipher
         /// </summary>
         /// <param name="operation">Делегат операции (Encrypt или Decrypt).</param>
         /// <param name="successMessage">Сообщение об успехе для строки состояния.</param>
-        private void ExecuteCipherOperation(Func<string, int, string> operation, string successMessage)
+        /// <param name="visualizeOutput">
+        /// Если true, визуализация строится по результату операции (для дешифрования —
+        /// восстановленному открытому тексту), иначе по входу (для шифрования —
+        /// исходному открытому тексту). Это обеспечивает согласованность: чтение строк
+        /// зигзага в визуализации сверху вниз всегда даёт шифр.
+        /// </param>
+        private void ExecuteCipherOperation(Func<string, int, string> operation, string successMessage, bool visualizeOutput)
         {
             try
             {
@@ -161,8 +170,15 @@ namespace BeelineCipher
                     return;
                 }
 
-                txtOutput.Text = operation(input, rows);
-                txtVisualization.Text = BeelineCipherCore.Visualize(input, rows);
+                string result = operation(input, rows);
+                txtOutput.Text = result;
+
+                // Исправление BUG-008: визуализация всегда строится по «открытому тексту»
+                // — для Encrypt это вход, для Decrypt это выход. Так чтение строк зигзага
+                // согласовано с другим полем формы (для Encrypt — с результатом, для
+                // Decrypt — со входным шифром).
+                string textToVisualize = visualizeOutput ? result : input;
+                txtVisualization.Text = BeelineCipherCore.Visualize(textToVisualize, rows);
 
                 // Исправление BUG-006: при rows >= длины текста алгоритм Rail Fence
                 // возвращает текст без изменений. Раньше пользователь видел совпадение
